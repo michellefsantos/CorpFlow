@@ -5,7 +5,7 @@ function criarTarefa() {
   const inputPrazo = document.getElementById('inputPrazo');
   const descricao = inputTarefa.value.trim();
   const prazo = inputPrazo.value.trim();
-  const regexData = /^\d{4}-\d{2}-\d{2}$/;
+  const regexData = /^\d{2}-\d{2}-\d{4}$/;
 
   if (!descricao || !prazo) {
     mostrarErro('Preencha todos os campos.');
@@ -13,7 +13,7 @@ function criarTarefa() {
   }
 
   if (!regexData.test(prazo)) {
-    mostrarErro('Formato de prazo inválido. Use AAAA-MM-DD.');
+    mostrarErro('Formato de prazo inválido. Use DD-MM-AAAA.');
     return;
   }
 
