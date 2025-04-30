@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CorpFlow Simples - Kanban</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>CorpFlow</h1>
+
+  <div id="usuario">
+    Tipo de usuário:
+    <select id="tipoUsuario">
+      <option value="colaborador">Colaborador</option>
+      <option value="gerente">Gerente</option>
+    </select>
+  </div>
+
+  <div id="novaTarefa">
+    <input type="text" id="inputTarefa" placeholder="Descrição da tarefa">
+    <input type="text" id="inputPrazo" placeholder="Prazo (DD-MM-AAAA)">
+    <button onclick="criarTarefa()">Adicionar Tarefa</button>
+  </div>
+
+  <div id="kanban">
+    <div class="coluna" id="fazer" ondragover="permitirDrop(event)" ondrop="soltar(event, 'fazer')">
+      <h3>FAZER</h3>
+    </div>
+    <div class="coluna" id="verificar" ondragover="permitirDrop(event)" ondrop="soltar(event, 'verificar')">
+      <h3>VERIFICAR</h3>
+    </div>
+    <div class="coluna" id="aprovar" ondragover="permitirDrop(event)" ondrop="soltar(event, 'aprovar')">
+      <h3>APROVAR</h3>
+    </div>
+  </div>
+
+  <div id="mensagem"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
